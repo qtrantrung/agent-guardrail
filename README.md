@@ -1,4 +1,4 @@
-# ai-agent-guard
+# agent-guardrail
 
 A small, auditable **policy-enforcement layer for AI agent tool calls**.
 
@@ -68,7 +68,7 @@ overstates its guarantees is worse than one whose limits are written down.
 No dependencies. Clone and run the tests:
 
 ```bash
-git clone https://github.com/[YOUR_USER]/agent-guardrail.git
+git clone https://github.com/qtrantrung/agent-guardrail.git
 cd agent-guardrail
 PYTHONPATH=src python -m unittest discover -s tests -v   # 23 tests
 PYTHONPATH=src python examples/demo.py                   # end-to-end walkthrough
