@@ -9,7 +9,7 @@ and writes a tamper-evident audit record - *before* anything executes. The goal
 is to turn the open-ended, probabilistic behaviour of an agent into **bounded,
 auditable operational risk**.
 
-It is pure Python standard library — no dependencies, no install friction — so
+It is pure Python standard library -no dependencies, no install friction -so
 the trust-critical logic is small enough to read in one sitting.
 
 ```text
@@ -22,7 +22,7 @@ agent  ──proposes──▶  Gateway  ──┬─▶ rate limit (fail fast)
 
 ## Why this exists
 
-When you give an LLM agent real tools — a shell, a filesystem, an HTTP client —
+When you give an LLM agent real tools -a shell, a filesystem, an HTTP client —
 the agent's instructions are no longer fully under your control. A
 [prompt injection](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 delivered through a web page, a document, or another agent can redirect it into
@@ -32,7 +32,7 @@ exfiltrating information to an attacker-controlled host.
 You cannot make the model immune to being convinced. What you *can* do is make
 sure that no matter what the model decides, the **actions it is capable of
 taking are bounded by policy you control, and every attempt is recorded**. That
-is a classic least-privilege / defence-in-depth posture — applied to the agent
+is a classic least-privilege / defence-in-depth posture -applied to the agent
 as the untrusted principal.
 
 ## Threat model
@@ -55,7 +55,7 @@ you would treat input from a partially-compromised client.
   given; bind that to a real workload identity upstream (mTLS, signed tokens).
 - **Total-rewrite of the audit log.** A hash chain detects edits *within* a log
   but not an attacker who replaces the whole file and recomputes it. Anchor the
-  head hash externally — periodically append it to immutable object storage or a
+  head hash externally -periodically append it to immutable object storage or a
   transparency log.
 - **Semantic judgement of tool *outputs*.** This bounds what an agent may *do*,
   not whether a returned document is itself malicious.
